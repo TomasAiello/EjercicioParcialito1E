@@ -19,35 +19,49 @@ Para poder sacar el permiso de circulación se deben llenar los siguientes datos
 - Si el síntoma es tos y la temperatura es menor o igual a 37, se debe informar "Permiso otorgado. Por favor no se olvide de toser sobre su codo."
 - Si el síntoma es pérdida de olfato o pérdida del gusto, más allá de la temperatura (siempre que sea correcta y menor a 38), informar "Permiso otorgado"
 - Si el síntoma es dificultad para respirar, más allá de la temperatura (siempre que sea correcta), informar "Permiso no otorgado"
-- Sino informar permiso otorgado.
+- Sino informar permiso otorgado. 
 			
 */
 
 
-function mostrar()
-{
+function mostrar() {
 	let nom;
 	let temp;
 	let sintoma;
 
-	document.getElementById("nombreyapellido").value = nom;
-	parseInt(document.getElementById("temperatura").value )= temp;
-	document.getElementById("Sintoma").value = sintoma; 
+	nom = document.getElementById("nombreyapellido").value;
+	sintoma = document.getElementById("Sintoma").value;
+	temp = parseInt(document.getElementById("temperatura").value);
 
-	
-
-	if (temp>=38){
-		alert ("permiso no otorgado");
+	while (temp < 35 || temp > 40) {
+		alert("temperatura incorrecta, vuelva a ingresar");
+		parseInt(document.getElementById("temperatura").value) = temp;
 	}
-	
 
-	switch (sintoma){
+	if (temp >= 38) {
+		alert("Permiso no otorgado");
+	}
+
+	if (temp > 35 && temp < 38) {
+	switch (sintoma) {
+
 		case "Tos":
-			if (temp <= 37){
-				alert ("Permiso otorgado. Por favor no se olvide de toser sobre su codo");
+			if (temp <= 37) {
+				alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo");
 			}
+			break;
 
+		case "PerdidaOlfato":
+		case "PerdidaGusto":
+				alert("Permiso otogardo");
+			break;
+
+		case "DificultadParaRespirar":
+			alert("Permiso no otorgado");
+			break;
+		case "Ninguno": // default:? 
+				alert("Permiso otorgado");
+			
 	}
-
-	
+}
 }

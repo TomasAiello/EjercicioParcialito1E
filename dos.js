@@ -16,9 +16,11 @@ function mostrar() {
 	let resp;
 	let contadorbebidas;
 	let contadorlacteos;
-	let bandera = 0;
+	//let bandera = 0;
 	let mayorprecio;
 	let mayorlacteo;
+	let nombremayor;
+	let nombremayorlacteo;
 	
 	resp = "s";
 	mayorlacteo = 0;
@@ -28,6 +30,7 @@ function mostrar() {
 
 
 	do {
+
 		nom = prompt("Ingrese el nombre del articulo");
 		categoria = prompt("Ingrese categoria: almacen/lacteos/limpieza/bebidas");
 		precio = parseInt(prompt("Ingrese precio del articulo"));
@@ -37,30 +40,34 @@ function mostrar() {
 			precio = parseInt(prompt("Ingrese precio del articulo"));
 		}
 
-		if (bandera == 0 || precio > mayorprecio) {
-			mayorprecio = nom;
-		}
+		if (precio > mayorprecio){ // || bandera == 0 
+			mayorprecio = precio;
+			nombremayor = nom;
+			//bandera = 1;
+		} 
 
 		if (categoria == "lacteos" && precio > mayorlacteo) {
-			mayorlacteo = nom;
+			mayorlacteo = precio ;
+			nombremayorlacteo = nom;
 			contadorlacteos++;
 		}
-		bandera = 1;
-
+		
 		if (categoria == "bebidas") {
 			contadorbebidas++;
 		}
 
 		resp = prompt("Quiere ingresar otro producto? s/n");
+
 	} while (resp == "s");
 
 
-	alert("el articulo de mayor precio es: " + mayorprecio);
+	alert("el articulo de mayor precio es: " + nombremayor);
 
 	if (contadorlacteos != 0){
-	alert("el lacteo de mayor precio es: " + mayorlacteo);
+	alert("el lacteo de mayor precio es: " + nombremayorlacteo);
 	}
 	
 	alert("la cantidad de articulos de la categoria bebidas es: " + contadorbebidas);
 
 }
+
