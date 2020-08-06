@@ -9,6 +9,7 @@ Al finalizar, se debe informar:
 	- Cantidad de artículos ingresados de categoría bebidas
 Considerar que las categorías pueden ser: almacen, lácteos, limpieza o bebidas y que el precio no puede ser menor a 0 ni mayor a 1000.
 */
+
 function mostrar() {
 	let nom;
 	let precio;
@@ -69,5 +70,4 @@ function mostrar() {
 	
 	alert("la cantidad de articulos de la categoria bebidas es: " + contadorbebidas);
 
-}
-
+} 

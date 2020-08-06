@@ -22,8 +22,6 @@ Para poder sacar el permiso de circulación se deben llenar los siguientes datos
 - Sino informar permiso otorgado. 
 			
 */
-
-
 function mostrar() {
 	let nom;
 	let temp;
@@ -43,25 +41,24 @@ function mostrar() {
 	}
 
 	if (temp > 35 && temp < 38) {
-	switch (sintoma) {
+		switch (sintoma) {
 
-		case "Tos":
-			if (temp <= 37) {
+			case "Tos":
 				alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo");
-			}
-			break;
+				break;
 
-		case "PerdidaOlfato":
-		case "PerdidaGusto":
+			case "PerdidaOlfato":
+			case "PerdidaGusto":
 				alert("Permiso otogardo");
-			break;
+				break;
 
-		case "DificultadParaRespirar":
-			alert("Permiso no otorgado");
-			break;
-		case "Ninguno": // default:? 
+			case "DificultadParaRespirar":
+				alert("Permiso no otorgado");
+				break;
+			case "Ninguno": // default:? 
 				alert("Permiso otorgado");
-			
+
+		}
 	}
 }
-}
+
