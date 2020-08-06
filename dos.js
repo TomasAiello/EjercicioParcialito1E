@@ -12,5 +12,27 @@ Considerar que las categorías pueden ser: almacen, lácteos, limpieza o bebidas
 
 function mostrar()
 {
-	alert("Hola Mundo");
+	let nom;
+	let precio;
+	let categoria;
+	let resp;
+	let contador; 
+	resp = "s";
+	
+
+	do{ // en el caso de que ponga "s" va pisar la variable :( 
+		nom = prompt("Ingrese el nombre del articulo");
+		categoria = prompt("Ingrese categoria: almacen/lacteo/limpieza/bebida");
+		precio = prompt("Ingrese precio del articulo");
+		
+		resp = prompt("Quiere ingresar otro producto? s/n");
+	}while (resp == "s");
+
+
+
+
+
+
+
+
 }
